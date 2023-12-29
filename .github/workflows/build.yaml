@@ -36,3 +36,10 @@ jobs:
             - name: Build
               run: ./gradlew clean assembleRelease
               shell: bash
+
+            - name: Upload artifact
+              if: ${{ always() }}
+              uses: actions/upload-artifact@v4
+              with:
+                  name: missing_rules
+                  path: ./app/build/outputs/mapping/release/missing_rules.txt
