@@ -27,7 +27,6 @@ android {
         playStore
     }
     compileSdkVersion 34
-    buildToolsVersion '34.0.4'
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34
