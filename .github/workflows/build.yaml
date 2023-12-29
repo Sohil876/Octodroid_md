@@ -1,7 +1,7 @@
 name: CI
 on:
     push:
-        branches: [md3]
+        branches: [agp8x]
 
 jobs:
     build:
@@ -36,19 +36,3 @@ jobs:
             - name: Build
               run: ./gradlew clean assembleRelease
               shell: bash
-
-            - name: Fetch public keystore
-              run: wget https://github.com/tytydraco/public-keystore/raw/main/public.jks
-              shell: bash
-
-            - name: Sign release APK
-              run: |
-                  apksigner="$(find $ANDROID_SDK_ROOT/build-tools -name apksigner | sort -r | head -n 1)"
-                  "$apksigner" sign --ks public.jks --ks-key-alias public --ks-pass pass:public --key-pass pass:public --in ./app/build/outputs/apk/release/app-release-unsigned.apk --out ./app/build/outputs/apk/release/app-release.apk
-              shell: bash
-
-            - name: Upload signed release APK
-              uses: actions/upload-artifact@v4
-              with:
-                  name: gh4a-release
-                  path: ./app/build/outputs/apk/release/app-release.apk
