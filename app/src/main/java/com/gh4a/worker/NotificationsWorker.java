@@ -323,9 +323,9 @@ public class NotificationsWorker extends Worker {
                 .build();
 
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
-                HomeActivity.makeIntent(context, R.id.notifications), 0);
+                HomeActivity.makeIntent(context, R.id.notifications), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent deleteIntent = PendingIntent.getService(context, 0,
-                NotificationHandlingService.makeMarkNotificationsSeenIntent(context), 0);
+                NotificationHandlingService.makeMarkNotificationsSeenIntent(context), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         NotificationCompat.Builder builder = makeBaseBuilder()
                 .setGroup(GROUP_ID_GITHUB)
                 .setGroupSummary(true)
