@@ -96,7 +96,7 @@ dependencies {
     implementation 'com.github.qoqa:traceur:2.2.12'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.13'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.robolectric:robolectric:4.11.1'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
 }
 
 def props = new Properties()
