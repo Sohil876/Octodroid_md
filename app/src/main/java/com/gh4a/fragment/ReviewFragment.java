@@ -154,12 +154,6 @@ public class ReviewFragment extends ListDataBaseFragment<TimelineItem> implement
     }
 
     @Override
-    protected void setHighlightColors(int colorAttrId, int statusBarColorAttrId) {
-        super.setHighlightColors(colorAttrId, statusBarColorAttrId);
-        mBottomSheet.setHighlightColor(colorAttrId);
-    }
-
-    @Override
     protected Single<List<TimelineItem>> onCreateDataSingle(boolean bypassCache) {
         var prService = ServiceFactory.getForFullPagedLists(PullRequestService.class, bypassCache);
         var reviewService = ServiceFactory.getForFullPagedLists(PullRequestReviewService.class, bypassCache);
