@@ -704,6 +704,15 @@ public abstract class BaseActivity extends AppCompatActivity implements
         return animation;
     }
 
+    private void assignBackground(View view, int color) {
+        if (view == null) {
+            return;
+        }
+        ColorDrawable background = new ColorDrawable(color);
+        view.setBackground(background);
+        mHeaderDrawables.add(background);
+    }
+
     private void setupSwipeToRefresh() {
         mSwipeLayout = findViewById(R.id.swipe_container);
         if (canSwipeToRefresh()) {
@@ -842,9 +851,6 @@ public abstract class BaseActivity extends AppCompatActivity implements
             return;
         }
         mProgress = findViewById(R.id.progress);
-        mProgressColors[0] = UiUtils.resolveColor(this, androidx.appcompat.R.attr.colorPrimary);
-        mProgressColors[1] = UiUtils.resolveColor(this, androidx.appcompat.R.attr.colorPrimaryDark);
-        mProgress.setSmoothProgressDrawableColors(mProgressColors);
 
         mCoordinatorLayout = findViewById(R.id.coordinator_layout);
         mContentContainer = findViewById(R.id.content_container);

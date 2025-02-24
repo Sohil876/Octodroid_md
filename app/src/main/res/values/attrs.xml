@@ -3,6 +3,9 @@
     <attr name="cardViewTheme" format="reference" />
     <attr name="inlineButtonStyle" format="reference" />
     <attr name="drawerBackground" format="reference" />
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="colorTertiary" format="color" />
     <attr name="colorCommitAddition" format="color" />
     <attr name="colorCommitDeletion" format="color" />
     <attr name="colorWebViewBackground" format="color" />

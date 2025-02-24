@@ -289,9 +289,9 @@ public class PullRequestConversationFragment extends IssueFragmentBase {
         // TODO
         Intent intent = comment instanceof ReviewComment
                 ? EditPullRequestCommentActivity.makeIntent(getActivity(), mRepoOwner, mRepoName,
-                mPullRequest.number(), comment.id(), 0L, comment.body(), R.attr.colorPrimary)
+                mPullRequest.number(), comment.id(), 0L, comment.body(), androidx.appcompat.R.attr.colorPrimary)
                 : EditIssueCommentActivity.makeIntent(getActivity(), mRepoOwner, mRepoName,
-                        mIssue.number(), comment.id(), comment.body(), R.attr.colorPrimary);
+                        mIssue.number(), comment.id(), comment.body(), androidx.appcompat.R.attr.colorPrimary);
         mEditLauncher.launch(intent);
     }
 

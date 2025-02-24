@@ -271,7 +271,6 @@ public class IssueActivity extends BaseActivity implements
         mIsCollaborator = null;
         setContentShown(false);
 
-        transitionHeaderToColor(androidx.appcompat.R.attr.colorPrimary, androidx.appcompat.R.attr.colorPrimaryDark);
         mHeader.setVisibility(View.GONE);
 
         if (mFragment != null) {

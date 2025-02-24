@@ -124,6 +124,10 @@ public class IntentUtils {
     }
 
     public static void openInCustomTabOrBrowser(Activity activity, Uri uri) {
+        openInCustomTabOrBrowser(activity, uri, 0);
+    }
+
+    public static void openInCustomTabOrBrowser(Activity activity, Uri uri, int headerColor) {
         SharedPreferences prefs = activity.getSharedPreferences(SettingsFragment.PREF_NAME,
                 Context.MODE_PRIVATE);
         boolean customTabsEnabled = prefs.getBoolean(SettingsFragment.KEY_CUSTOM_TABS, true);
@@ -133,9 +137,6 @@ public class IntentUtils {
             if (headerColor == 0) {
                 headerColor = UiUtils.resolveColor(activity, androidx.appcompat.R.attr.colorPrimary);
             }
-            CustomTabColorSchemeParams colorParams = new CustomTabColorSchemeParams.Builder()
-                    .setToolbarColor(headerColor)
-                    .build();
 
             CustomTabsIntent i = new CustomTabsIntent.Builder()
                     .build();

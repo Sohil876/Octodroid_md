@@ -806,9 +806,10 @@ public class IssueEditActivity extends BasePagerActivity implements
                     .collect(toList());
 
 
-            // var activity = (IssueEditActivity) requireActivity();
+            var activity = (IssueEditActivity) requireActivity();
             // return new AlertDialog.Builder(activity)
-            return new MaterialAlertDialogBuilder(getContext())
+            // return new MaterialAlertDialogBuilder(getContext())
+            return new MaterialAlertDialogBuilder(activity)
                     .setTitle(R.string.issue_template_dialog_title)
                     .setAdapter(
                         new ItemsWithDescriptionAdapter(activity, templateItems),

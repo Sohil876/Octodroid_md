@@ -6,6 +6,18 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+<com.gh4a.widget.VerticalTextView
+        android:id="@+id/tv_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="bottom|center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textAppearance="@style/TextAppearance.VerySmall"
+        android:textColor="?android:attr/textColorPrimary"
+        tools:text="OPEN" />
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
